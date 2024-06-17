@@ -1,0 +1,238 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    overflow: hidden;
+}
+
+body.dark-mode {
+    background-color: #2c2c2c;
+    color: #ffffff;
+}
+
+body.light-mode {
+    background-color: #f9f9f9;
+    color: #000000;
+}
+
+header {
+    text-align: center;
+    padding: 1rem;
+}
+
+.main-header h1 {
+    font-size: 4rem;
+    padding: 1.25rem;
+    text-shadow: 0 .25rem 0 #aa711b;
+    color: inherit;
+    margin: 0;
+    animation: bubble 2s infinite;
+}
+
+@keyframes bubble {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+.image-container {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.movable-image {
+    width: 200px; /* Adjust the size as needed */
+    max-height:auto; /* Ensure the image does not push the content too far down */
+    height: auto;
+    animation: float 3s infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+main {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 4rem);
+    padding: 1rem;
+    box-sizing: border-box; /* Ensure padding is included in height calculation */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #bb995b; /* Light blue background */
+    padding: 2rem;
+    border-radius: 10px;
+    width: 600px;
+    margin: auto; /* Center horizontally */
+}
+
+.game-intro {
+    margin-bottom: 1rem;
+}
+
+.game-title {
+    font-size: 2.3rem;
+    padding-bottom: 30px;
+    font-weight: 700;
+    color: rgb(216, 216, 228); /* Dark blue color */
+    margin: 0;
+}
+
+.game-instructions {
+    background-color: #774e02; /* Light blue background */
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.game-instructions p {
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: none;
+    display: inline-block;
+    z-index: 1;
+    position: relative;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #000;
+}
+
+body.dark-mode .popup-content {
+    background-color: #444;
+    color: #fff;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+#rules-popup.active,
+#settings-popup.active {
+    display: block;
+}
+
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: moveBackground 30s linear infinite;
+}
+
+body.light-mode .animated-background {
+    background-image: url('https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/14893964/original/354687d746e4f318e3077782078c25d1ff98546c/make-2d-games-background-and-map-design.png');
+    background-size: cover;
+}
+
+body.dark-mode .animated-background {
+    background-image: url('https://t4.ftcdn.net/jpg/01/75/41/63/360_F_175416312_CLaJROwFrbqcsuVkTiH5ru5e93NGCWTE.jpg');
+    background-size: cover;
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-header h1 {
+        font-size: 2.5rem;
+        padding: 1rem;
+    }
+    .movable-image {
+        width: 150px; /* Adjusted size for responsiveness */
+    }
+    .content {
+        width: 90%; /* Adjusted width for responsiveness */
+        padding: 1rem;
+    }
+    .game-title {
+        font-size: 2rem;
+    }
+    .game-instructions p {
+        font-size: 1.2rem;
+    }
+    button {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+}
+
+.wood-image {
+    /* background-color: #aa711b; */
+    background-image: url("/—Pngtree—flower\ vine\ wood\ grain\ prompt_4446415.png");
+    background-size: cover; /* Adjust the size of the background image */
+    background-position: center; /* Center the background image */
+    width: 1100px;
+    height: 200px; /* Set the height as needed */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Center horizontally */
+    padding: 1rem;
+    box-sizing: border-box; 
+}

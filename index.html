@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-mode">
+    <div class="animated-background"></div>
+    <header>
+        <div class="main-header">
+            <div class="wood-image">
+                <h1>GUESS THE NUMBER</h1>
+            </div>
+            <div class="image-container">
+                <img class="movable-image" src="/—Pngtree—cartoon plush watercolor cute monster_6445160.png" alt="Game Icon">
+            </div>
+        </div>
+    </header>
+    
+        <div class="content">
+            <div class="game-intro">
+                <p class="game-title">Welcome to the Number Guessing Game!</p>
+                <div class="game-instructions">
+                    <p>Guess the correct number out of 50 in 5 turns.</p>
+                    <button id="start-button"><a href="https://partyrock.aws/u/swatihaldar/kMxlh1szf/NumberGuesser" target="_blank" rel="noopener noreferrer">Start Game</a></button>
+                    <button id="rules-button">Game Rules</button>
+                    <button id="settings-button">Settings</button>
+                </div>
+            </div>
+        </div>
+    
+    <div id="rules-popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Game Rules</h2>
+            <p>1. Guess a number between 1 and 50.</p>
+            <p>2. You have 5 turns to guess the correct number.</p>
+            <p>3. If your guess is too high or too low, the game will provide feedback.</p>
+            <p>4. If you guess the correct number within 5 turns, you win!</p>
+            <p>5. If you can't guess the correct number in 5 turns, the game will reveal the correct number.</p>
+        </div>
+    </div>
+    <div id="settings-popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Settings</h2>
+            <label for="theme-select">Choose Theme:</label>
+            <select id="theme-select">
+                <option value="light">Light Mode</option>
+                <option value="dark">Dark Mode</option>
+            </select>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
