@@ -1,8 +1,7 @@
-/* styles.css */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
-    overflow: hidden;
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 body.dark-mode {
@@ -23,10 +22,10 @@ header {
 .main-header h1 {
     font-size: 4rem;
     padding: 1.25rem;
-    text-shadow: 0 .25rem 0 #aa711b;
-    color: inherit;
+    text-shadow: 0 .25rem 0 #f0d59c;
+    color: #98abc0; /* Set a specific color for the heading */
     margin: 0;
-    animation: bubble 2s infinite;
+    animation: inherit; /* Inherit the animation from the parent */
 }
 
 @keyframes bubble {
@@ -42,7 +41,6 @@ header {
 
 .movable-image {
     width: 200px; /* Adjust the size as needed */
-    max-height:auto; /* Ensure the image does not push the content too far down */
     height: auto;
     animation: float 3s infinite;
 }
@@ -61,7 +59,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 4rem);
+    min-height: calc(100vh - 4rem);
     padding: 1rem;
     box-sizing: border-box; /* Ensure padding is included in height calculation */
 }
@@ -71,11 +69,12 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #bb995b; /* Light blue background */
+    background-color: #bb995b;
     padding: 2rem;
     border-radius: 10px;
-    width: 600px;
-    margin: auto; /* Center horizontally */
+    max-width: 600px;
+    width: 100%;
+    margin: auto; 
 }
 
 .game-intro {
@@ -86,15 +85,16 @@ main {
     font-size: 2.3rem;
     padding-bottom: 30px;
     font-weight: 700;
-    color: rgb(216, 216, 228); /* Dark blue color */
+    color: rgb(216, 216, 228);
     margin: 0;
 }
 
 .game-instructions {
-    background-color: #774e02; /* Light blue background */
+    background-color: #774e02;
     padding: 1rem;
     border-radius: 10px;
     text-align: center;
+    width: 95%;
 }
 
 .game-instructions p {
@@ -147,6 +147,8 @@ button:hover {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     color: #000;
+    width: 80%;
+    max-width: 400px;
 }
 
 body.dark-mode .popup-content {
@@ -203,10 +205,10 @@ body.dark-mode .animated-background {
         padding: 1rem;
     }
     .movable-image {
-        width: 150px; /* Adjusted size for responsiveness */
+        width: 150px;
     }
     .content {
-        width: 90%; /* Adjusted width for responsiveness */
+        width: 90%;
         padding: 1rem;
     }
     .game-title {
@@ -219,20 +221,59 @@ body.dark-mode .animated-background {
         padding: 10px 15px;
         font-size: 0.9em;
     }
+    .popup-content {
+        width: 90%;
+        max-width: 300px;
+    }
 }
 
 .wood-image {
-    /* background-color: #aa711b; */
-    background-image: url("/—Pngtree—flower\ vine\ wood\ grain\ prompt_4446415.png");
-    background-size: cover; /* Adjust the size of the background image */
-    background-position: center; /* Center the background image */
-    width: 1100px;
-    height: 200px; /* Set the height as needed */
+    background-image: url("/—Pngtree—phnom\ penh\ blue\ cloud\ headline_5396996.png");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    max-width: 1100px;
+    height: 230px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto; /* Center horizontally */
+    margin: 0 auto;
     padding: 1rem;
-    box-sizing: border-box; 
+    box-sizing: border-box;
+    animation: woodMove 3s infinite; /* Add animation here */
+}
+
+@keyframes woodMove {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Additional media query for very small screens */
+@media (max-width: 480px) {
+    .main-header h1 {
+        font-size: 2rem;
+    }
+    .movable-image {
+        width: 100px;
+    }
+    .content {
+        width: 100%;
+        padding: 1rem;
+    }
+    .game-title {
+        font-size: 1.5rem;
+    }
+    .game-instructions p {
+        font-size: 1rem;
+    }
+    button {
+        padding: 8px 10px;
+        font-size: 0.8em;
+    }
+    .popup-content {
+        width: 95%;
+        max-width: 250px;
+    }
 }
